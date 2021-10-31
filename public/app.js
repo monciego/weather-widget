@@ -21,5 +21,23 @@ const showTime = () => {
   }, 1000);
 };
 
+// set greeting
+const setGreeting = () => {
+  let today = new Date(),
+    hour = today.getHours();
+
+  if (hour < 12) {
+    // morning
+    greeting.textContent = "Good morning";
+  } else if (hour < 18) {
+    // afternoon
+    greeting.textContent = "Good afternoon";
+  } else {
+    // evening
+    greeting.textContent = "Good evening";
+  }
+};
+
 // run
 showTime();
+setGreeting();
