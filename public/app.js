@@ -1,5 +1,6 @@
 const time = document.getElementById("time");
 const greeting = document.getElementById("greeting");
+const date = document.getElementById("date");
 
 // show time
 const showTime = () => {
@@ -26,6 +27,17 @@ function addZero(n) {
   return (parseInt(n, 10) < 10 ? "0" : "") + n;
 }
 
+// set date
+const setDate = () => {
+  let options = {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  };
+  let today = new Date();
+  date.innerHTML = today.toLocaleDateString("en-US", options);
+};
+
 // set greeting
 const setGreeting = () => {
   let today = new Date(),
@@ -45,4 +57,5 @@ const setGreeting = () => {
 
 // run
 showTime();
+setDate();
 setGreeting();
