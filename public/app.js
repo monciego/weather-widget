@@ -14,12 +14,17 @@ const showTime = () => {
   hour = hour % 12 || 12;
 
   //   output time
-  time.innerHTML = `${hour}<span>:</span>${minute}`;
+  time.innerHTML = `${hour}<span>:</span>${addZero(minute)}`;
 
   setTimeout(() => {
     showTime();
   }, 1000);
 };
+
+// add zero
+function addZero(n) {
+  return (parseInt(n, 10) < 10 ? "0" : "") + n;
+}
 
 // set greeting
 const setGreeting = () => {
